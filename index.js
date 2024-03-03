@@ -8,10 +8,18 @@ const postFetchCategory=async()=>{
     datas.forEach(card => {
 
         const div=document.createElement("div");
+        console.log(card.isActive);
         div.classList="bg-[#F3F3F5] rounded-xl lg:px-8 lg:py-4  mt-8 w-full";
+       
         div.innerHTML=`
         <div class="flex gap-4">
-    <img class="w-16 h-16 rounded-xl" src="${card.image}" alt="">
+       
+
+<div class="indicator">
+<span class="indicator-item badge  ${card.isActive ?'bg-green-700' : 'bg-red-700'}"></span> 
+<div class="grid w-16 h-16 bg-base-300 place-items-center"><img class="w-16 h-16 rounded-xl" src="${card.image}" /></div>
+</div>
+
     <div>
       <div class="flex gap-4">
         <p># <span id="card-category">${card.category}</span></p>
@@ -93,18 +101,18 @@ const latestDiv = document.createElement("div");
 latestDiv.innerHTML=`
 <div class="card w-96 bg-base-100 shadow-xl">
           <figure class="px-2 py-2 "><img class= "rounded-xl" src="${card2.cover_image}" alt="Shoes" /></figure>
-          <div class="flex gap-2 px-3 py-5"><img src="pic/Frame (1).png" alt=""> <p>29 january 2024</p></div>
-          <div class="px-3 "><h1 class="text-xl font-semibold">title of the card</h1></div>
+          <div class="flex gap-2 px-3 py-5"><img src="pic/Frame (1).png" alt=""> <p>${ !card2.author.posted_date==""?card2.author.posted_date:'No Publish Date'}</p></div>
+          <div class="px-3 "><h1 class="text-xl font-semibold">${card2.title}</h1></div>
           <div class="px-3 py-2">
             
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p>${card2.description}</p>
             
           </div>
           <div class="flex px-3 gap-2 pb-5">
             <img class="w-12 rounded-full" src="${card2.profile_image}" alt="">
             <div>
-            <p class="font-bold">Russel</p>
-            <p class="">developer</p>
+            <p class="font-bold">${card2.author.name}</p>
+            <p class="">${!card2.author.designation== "" ?card2.author.designation:'Unknown'}</p>
             </div>
           </div>
         </div>
