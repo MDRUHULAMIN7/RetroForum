@@ -71,8 +71,8 @@
           <h1 class="lg:text-7xl text-2xl text-white font-bold">Wellcome To The <br> <span class="text-[#797DFC]">ReTro</span> Forum</h1>
           <p class="text-slate-300 lg:text-xl">share your favourite opinion and win <br> Forum Coffiee mug!</p>
           <label class="input input-bordered flex items-center gap-2 lg:w-96 rounded-full">
-            <input type="text" class="grow " placeholder="Search here anything" />
-            <button class="rounded-full text-white  bg-[#797DFC] px-4">Search</button>
+            <input type="text" id="input-field" class="grow " placeholder="Search here anything" />
+            <button class="rounded-full text-white  bg-[#797DFC] px-4" onclick="handleSearch()">Search</button>
           </label>
          
         </div>
@@ -91,19 +91,23 @@
   </section>
   <!-- new banner section end
    -->
-  <!-- banner section -->
-  <!-- <section class="mx-10">
-  <div style="background-image: url(pic/Rectangle\ 1.png); background-repeat: no-repeat ;height:750px ;" class="lg:mx-36 lg:mt-12 mt-4">
-    <div class="translate-y-"> <input type="text" placeholder="Search here anything"></div>
-    
-  
-    <div style="background-image: url(images/bgbanner.png); background-repeat: no-repeat ;height:450px ;" class="pt-24 translate";>
+ <!-- loadsing spiner -->
+ <div class="flex justify-center items-center hidden" id="loading-spinner">
+  <span class="loading loading-spinner text-primary"></span>
+  <span class="loading loading-spinner text-secondary"></span>
+  <span class="loading loading-spinner text-accent"></span>
+  <span class="loading loading-spinner text-neutral"></span>
+  <span class="loading loading-spinner text-info"></span>
+  <span class="loading loading-spinner text-success"></span>
+  <span class="loading loading-spinner text-warning"></span>
+  <span class="loading loading-spinner text-error"></span>
+ </div>
 
-    </div>
 
-  </div>
-  </section> -->
-  <!-- banner section end-->
+
+
+
+ <!-- loadsing spiner -->
   <!-- discus section -->
   <section class="lg:mx-36 mx-4 my-2 ">
   <div class="text-center ">
@@ -112,7 +116,11 @@
   </div>
   <div class="lg:flex gap-16">
     <div class="lg:w-4/6" >
-      <div  id="card-container"">
+      <div  id="card-container">
+ 
+     
+      </div>
+      <div  id="card-container2" class="">
  
      
       </div>
