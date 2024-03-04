@@ -9,10 +9,10 @@ const postFetchCategory=async()=>{
 
         const div=document.createElement("div");
         console.log(card.isActive);
-        div.classList="bg-[#F3F3F5] rounded-xl lg:px-8 lg:py-4  mt-8 w-full";
+        div.classList="bg-[#F3F3F5] rounded-xl lg:px-8 px-2 py-2 lg:py-4  mt-8 w-full";
        
         div.innerHTML=`
-        <div class="flex gap-4">
+        <div class="lg:flex lg:justify-start sm:text-center  justify-center gap-4">
        
 
 <div class="indicator">
@@ -21,7 +21,7 @@ const postFetchCategory=async()=>{
 </div>
 
     <div>
-      <div class="flex gap-4">
+      <div class="flex gap-4 ">
         <p># <span id="card-category">${card.category}</span></p>
         <p>Author:<span id="card-author-name">${card.author.name}</span></p>
   
